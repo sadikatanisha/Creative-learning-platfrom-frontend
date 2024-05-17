@@ -1,8 +1,4 @@
 [build]
+  base = "frontend"
   command = "npm run build"
-  publish = ".next"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  publish = "frontend/out"
