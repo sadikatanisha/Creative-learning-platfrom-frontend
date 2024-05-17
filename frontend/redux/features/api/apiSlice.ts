@@ -9,11 +9,11 @@ export interface RootState {
   auth: AuthState;
 }
 
-const api = "https://creative-learning-platfrom-1.onrender.com";
+//const api = "https://creative-learning-platfrom-1.onrender.com";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${api}/api/v1/`,
+    baseUrl: `https://creative-learning-platfrom-1.onrender.com/api/v1/`,
     credentials: "include",
     prepareHeaders: (headers, { getState }) => {
       const state = getState() as RootState;
