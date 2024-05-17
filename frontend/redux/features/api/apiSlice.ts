@@ -9,7 +9,7 @@ export interface RootState {
   auth: AuthState;
 }
 
-const api = process.env.NEXT_PUBLIC_SERVER_URI;
+const api = "https://creative-learning-platfrom-1.onrender.com";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
