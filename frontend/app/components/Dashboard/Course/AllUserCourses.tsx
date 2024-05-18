@@ -31,12 +31,12 @@ const AllUserCourses = (props: Props) => {
           {data &&
             data.courses.map((course: any) => (
               <div
-                key={course._id}
+                key={course?._id}
                 className="card w-full bg-base-100 shadow-xl"
               >
                 <div className="card-body">
-                  <h2 className="card-title">{course.name}</h2>
-                  <p>{course.description}</p>
+                  <h2 className="card-title">{course?.name}</h2>
+                  <p>{course?.description}</p>
                   <div className="card-actions justify-end">
                     <button
                       onClick={() => handleEdit(course._id)}
@@ -45,7 +45,7 @@ const AllUserCourses = (props: Props) => {
                       Edit
                     </button>
                     <button
-                      onClick={() => handleDelete(course._id)}
+                      onClick={() => handleDelete(course?._id)}
                       className="btn  bg-error"
                     >
                       Delete

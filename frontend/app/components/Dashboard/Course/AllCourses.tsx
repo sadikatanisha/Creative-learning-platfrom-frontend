@@ -58,7 +58,7 @@ const AllCourses = () => {
             <tbody>
               {data &&
                 data.courses.map((course: any) => (
-                  <tr key={course._id}>
+                  <tr key={course?._id}>
                     <td>
                       <div className="flex items-center gap-3">
                         <div className="avatar">
@@ -74,7 +74,7 @@ const AllCourses = () => {
                           </div>
                         </div>
                         <div>
-                          <div className="font-bold">{course.name}</div>
+                          <div className="font-bold">{course?.name}</div>
                           <div className="text-sm opacity-50">
                             {course?.instructor?.email}
                           </div>
@@ -82,13 +82,13 @@ const AllCourses = () => {
                       </div>
                     </td>
                     <td>
-                      {course.status === "approved" ? (
+                      {course?.status === "approved" ? (
                         <span className="badge badge-success badge-md">
-                          {course.status}
+                          {course?.status}
                         </span>
                       ) : (
                         <span className="badge badge-ghost gap-2 badge-md">
-                          {course.status}
+                          {course?.status}
                         </span>
                       )}
                     </td>
@@ -97,18 +97,20 @@ const AllCourses = () => {
                         type="text"
                         placeholder="Type here"
                         className="input input-bordered input-md w-full max-w-xs"
-                        value={feedbacks[course._id] || [course.adminFeedback]}
+                        value={
+                          feedbacks[course?._id] || [course?.adminFeedback]
+                        }
                         onChange={(e) =>
-                          handleFeedbackChange(course._id, e.target.value)
+                          handleFeedbackChange(course?._id, e.target.value)
                         }
                       />
                     </td>
                     <td>
                       <select
                         className="select select-bordered w-full max-w-xs"
-                        value={statuses[course._id] || [course.status]}
+                        value={statuses[course?._id] || [course?.status]}
                         onChange={(e) =>
-                          handleStatusChange(course._id, e.target.value)
+                          handleStatusChange(course?._id, e.target.value)
                         }
                       >
                         <option value="pending">Pending</option>
@@ -119,7 +121,7 @@ const AllCourses = () => {
                     <td>
                       <button
                         className="btn btn-primary"
-                        onClick={() => handleUpdate(course._id)}
+                        onClick={() => handleUpdate(course?._id)}
                       >
                         Update
                       </button>
