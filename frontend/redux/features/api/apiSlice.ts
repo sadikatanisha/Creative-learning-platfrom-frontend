@@ -13,7 +13,7 @@ const api = process.env.NEXT_PUBLIC_SERVER_URI;
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${api}/api/v1/`,
+    baseUrl: `https://creative-learning-platfrom-3.onrender.com/api/v1/`,
     credentials: "include",
     prepareHeaders: (headers, { getState }) => {
       const state = getState() as RootState;

@@ -18,7 +18,7 @@ export default async function handler(
 
   try {
     const response = await axios.put(
-      `https://creative-learning-platfrom-2.onrender.com/api/v1/courses/${courseId}/status`,
+      `https://creative-learning-platfrom-3.onrender.com/api/v1/courses/${courseId}/status`,
       { status },
       { withCredentials: true }
     );
